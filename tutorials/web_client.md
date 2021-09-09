@@ -55,7 +55,3 @@ being the style for the study.
 ![Create a Study Window](images/img_create_study.png)
 
 Once the Study is created successfully, the New Study will appear in the Study List.
-
-#### Uploading Studies with a Script
-Studies can be also uploaded using a Python Script, an example of this can be found [here](https://github.com/zepben/evolve-functional-testing/blob/main/functional_testing/upload_study/upload_study.py). The Python SDK is needed 
-to accomplish this. You can view [How to use the Python SDK](https://github.com/zepben/evolve-functional-testing/blob/main/documentation/tute_using-sdk.md) for more information. 
