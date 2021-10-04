@@ -1,0 +1,22 @@
+{
+  "auth0": {
+    "client_id": "8LCZNel8deS6Rcpt9Fv4ZgVMCzXI9uJ3",
+    "username": "somerandomuser@bouckaert.com.au",
+    "password": "Giraffe1354211",
+    "conf_address": "https://evolve.essential.zepben.com/ewb/auth"
+  },
+  "ewb_server": {
+    "host": "evolve.essential.zepben.com",
+    "port": 9000,
+    "rpc_port": 443,
+    "secure": "True"
+  },
+  "eas_server": {
+    "host": "evolve.essential.zepben.com",
+    "port": 443
+  },
+  "test_config": {
+    "equipment_mrid": "substation_site208850",
+    "feeder_mrid": "CPM3B3"
+  }
+}
