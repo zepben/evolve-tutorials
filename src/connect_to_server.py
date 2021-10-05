@@ -1,17 +1,5 @@
 from zepben.evolve import *
 
-# Create a Power Transformer
-power_transformer = PowerTransformer(mrid="pt1")
-
-# Create EnergyConsumer
-energy_consumer = EnergyConsumer(mrid="ec1")
-
-# Create Photovoltaic Unit
-pv_unit = PhotoVoltaicUnit(mrid="pv1")
-
-# Create Battery
-battery = BatteryUnit(mrid="b1")
-
 host = "evolve.essential.zepben.com"
 rpc_port = 443
 
@@ -20,11 +8,11 @@ with connect(host=host, rpc_port=rpc_port,
              conf_address="https://evolve.essential.zepben.com/ewb/auth",
              client_id="8LCZNel8deS6Rcpt9Fv4ZgVMCzXI9uJ3",
              username="somerandomuser@bouckaert.com.au",
-             password="Giraffe1354211") as channel:
+             password="Giraffe1354211", secure=True) as channel:
     client = SyncNetworkConsumerClient(channel)
     print("Connection Established")
 
-    feeder_mrid = "NSK3B2"
+    feeder_mrid = "CPM3B3"
     result = client.get_equipment_container(mrid=feeder_mrid)
     container: NetworkService = client.service
 
