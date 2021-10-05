@@ -1,13 +1,21 @@
 from zepben.evolve import PowerTransformer, EnergyConsumer, PhotoVoltaicUnit, BatteryUnit
 
-# Create a Power Transformer
-power_transformer = PowerTransformer(mrid="pt1")
 
-# Create EnergyConsumer
-energy_consumer = EnergyConsumer(mrid="ec1")
+def creating_objects():
 
-# Create Photovoltaic Unit
-pv_unit = PhotoVoltaicUnit(mrid="pv1")
+    print('Printing created objects...')
+    # Create a Power Transformer
+    power_transformer = PowerTransformer(mrid="pt1")
+    print(power_transformer)
 
-# Create Battery
-battery = BatteryUnit(mrid="b1")
+    # Create EnergyConsumer
+    energy_consumer = EnergyConsumer(mrid="ec1")
+    print(energy_consumer)
+
+    # Create Photovoltaic Unit
+    pv_unit = PhotoVoltaicUnit(mrid="pv1")
+    print(pv_unit)
+
+    # Create Battery
+    battery = BatteryUnit(mrid="b1")
+    print(battery)
