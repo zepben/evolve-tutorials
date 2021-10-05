@@ -33,8 +33,7 @@ These tutorials require a `config.json`, the configuration file must follow the 
         "feeder_mrid": "feeder123"
       }
     }
-
-The `config.json` file is parsed and passed as `config`
+The `config.json` file is parsed and passed as a parameter called `config`
 
 ##Using the Python SDK
 ### Creating Objects
@@ -70,7 +69,7 @@ The following snippet showcases one way of establishing a connection with the [E
 
     from zepben.evolve import connect, SyncNetworkConsumerClient 
 
-    # Connecting server
+    print("Connecting to Server...")
     with connect(host=config['ewb_server']['host'], rpc_port=config['ewb_server']['rpc_port'],
                  conf_address=config['auth0']['conf_address'],
                  client_id=config['auth0']['client_id'],
