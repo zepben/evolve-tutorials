@@ -3,7 +3,7 @@ from zepben.evolve import PowerTransformer, EnergyConsumer, PhotoVoltaicUnit, Ba
 
 def creating_objects():
 
-    print('Printing created objects...')
+    print('Creating objects...')
     # Create a Power Transformer
     power_transformer = PowerTransformer(mrid="pt1")
     print(power_transformer)
