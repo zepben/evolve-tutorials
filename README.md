@@ -14,4 +14,6 @@ This tutorial contains and demonstrate some features in the web client, like:
 
 ### Python SDK Tutorial
 This tutorial contains some snippets of code that demonstrate some functionalities of the SDK Python, like:
-- 
+- Creating Objects
+- Retrieving Data
+- Creating and Uploading Studies
