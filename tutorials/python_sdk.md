@@ -34,8 +34,8 @@ These tutorials require a `config.json` file. This configuration file must follo
       }
     }
 The `config.json` file is parsed and passed as a parameter called `config`. 
-A config file with auth0 credentials, EWB  and  EAS server configuration could be provided by Zepben with a request 
-to the Slack channel [#evolve-dev](https://app.slack.com/client/T6M26EDT2/C01E8RZTBUG).   
+Zepben can provide a pre-filled config file with auth0 credentials, EWB and EAS server configuration. To access this, please make a request 
+in Zepben's public [#evolve-dev](https://app.slack.com/client/T6M26EDT2/C01E8RZTBUG) Slack channel.   
 
 ##Using the Python SDK
 ### Creating Objects
