@@ -33,7 +33,9 @@ These tutorials require a `config.json` file. This configuration file must follo
         "feeder_mrid": "feeder123"
       }
     }
-The `config.json` file is parsed and passed as a parameter called `config`
+The `config.json` file is parsed and passed as a parameter called `config`. 
+A config file with auth0 credentials, EWB  and  EAS server configuration could be provided by Zepben with a request 
+to the Slack channel [#evolve-dev](https://app.slack.com/client/T6M26EDT2/C01E8RZTBUG).   
 
 ##Using the Python SDK
 ### Creating Objects
