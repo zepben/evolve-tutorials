@@ -9,7 +9,7 @@ The Python SDK can be used by using the zepben.evolve package that can be instal
     pip install zepben.evolve
 
 ### Configuration Setup
-These tutorials require a `config.json`, the configuration file must follow the next structure:
+These tutorials require a `config.json` file. This configuration file must follow this structure:
 
     {
       "auth0": {
@@ -64,7 +64,7 @@ Transformers, Energy Consumers, Photovoltaic Units and Batteries:
     print(battery)
 
 ### Connecting to a Server
-It is also possible to interact, create or delete objects in a server. First, a connection with set server must be established.
+It is also possible to interact, create or delete objects in a server. First, a connection with a set server must be established.
 The following snippet showcases one way of establishing a connection with the [EWB Server](https://zepben.github.io/evolve/docs/energy-workbench-server/2.8.0).
 
     from zepben.evolve import connect, SyncNetworkConsumerClient 
@@ -108,9 +108,9 @@ CPM3B3:
     print(f'Batteries in the feeder {feeder_mrid}: {len(batteries)}')
 
 ### Creating and Uploading Studies
-Creating and uploading studies to the server using a Script is possible. The following example showcases the creation of 
+Creating and uploading studies to the server using a script is possible. The following example showcases the creation of 
 a very simple study. Once the study is created, it is automatically uploaded to the server and can be viewed in the 
-_"Study List"_.
+_Study List_ in the EAS Web Client.
 
     from geojson import Feature, Point, LineString, FeatureCollection
     from zepben.eas import Study, EasClient
