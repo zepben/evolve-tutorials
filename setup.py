@@ -7,7 +7,7 @@ setup(name="evolve-src",
       package_dir={"": "src"},
       install_requires=
       ["zepben.evolve == 0.25.0",
-       "zepben.eas == 0.5.0", "pytest"],
+       "zepben.eas == 0.6.0", "pytest"],
       extras_require={
           "tests": test_deps
       })

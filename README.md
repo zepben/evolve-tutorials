@@ -12,7 +12,7 @@ This tutorial contains and demonstrate some features in the web client, like:
 - Creating studies manually or via a script
 - Viewing studies
 
-### [Python SDK Tutorials](https://github.com/zepben/evolve-tutorials/tree/main/tutorials)
+python-sdk link in Read### [Python SDK Tutorials](https://github.com/zepben/evolve-tutorials/blob/main/tutorials/python_sdk.md)
 This tutorial contains some snippets of code that demonstrate some functionalities of the SDK Python, like:
 - [Creating Objects](https://github.com/zepben/evolve-tutorials/blob/main/src/evolve_sdk/creating_objects.py)
 - [Retrieving Data](https://github.com/zepben/evolve-tutorials/blob/main/src/evolve_sdk/query_data.py)
