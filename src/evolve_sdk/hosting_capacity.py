@@ -281,6 +281,7 @@ async def _get_power_transformer_to_bus(mappings: BusBranchNetworkCreationMappin
 
     return pt_to_busses
 
+
 # noinspection PyDefaultArgument
 async def _num_of_consumers(pt: PowerTransformer, pt_to_num_consumers={}):
     if pt_to_num_consumers.get(pt.mrid) is not None:
@@ -332,4 +333,3 @@ def _add_regulator_controllers(
         )
 
     return net
-
