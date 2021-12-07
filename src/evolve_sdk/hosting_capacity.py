@@ -43,8 +43,8 @@ class DistTransformerInfo:
 
 async def hosting_capacity():
     logger = get_logger()
-    auth_config = read_json_config("../config_files\\config.json")
-    study_args = read_json_config("../config_files\\study_args_hosting_capacity.json")
+    auth_config = read_json_config("../auth_config_files\\auth_config.json")
+    study_args = read_json_config("../src\\evolve_sdk\\study_args_hosting_capacity.json")
     async with connect_async(
             host=auth_config["ewb_server"]["host"],
             rpc_port=auth_config["ewb_server"]["rpc_port"],
@@ -118,7 +118,7 @@ async def hosting_capacity():
                         f" Each EV charging station adds {ev_p_w / 1000}kW of real power"
                         f" and {ev_q_var / 1000}kVAR reactive power as load.",
                         ["ev_charging", feeder_mrid],
-                        json.load(open("../config_files\\style.json", "r")),
+                        json.load(open("../src\\utils\\style.json", "r")),
                         result.mappings,
                         added_ev_stations
                     )

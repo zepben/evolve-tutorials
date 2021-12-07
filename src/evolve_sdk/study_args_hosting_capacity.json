@@ -1,0 +1,22 @@
+{
+  "feeder": "CPM3B3",
+  "initial": {
+    "load": {
+      "real_w": 2000,
+      "reactive_var": 0
+    },
+    "pv_load": {
+      "real_w": 1000,
+      "reactive_var": 0
+    }
+  },
+  "ev_charging": {
+    "penetration_percents": [
+      10,
+      20,
+      30
+    ],
+    "ev_p_w": 5000,
+    "ev_q_var": 0
+  }
+}

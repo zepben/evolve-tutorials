@@ -24,8 +24,8 @@ from utils.utils import get_logger, read_json_config
 
 async def load_flow():
     logger = get_logger()
-    auth_config = read_json_config("../config_files\\config.json")
-    study_args = read_json_config("../config_files\\study_args_load_flow.json")
+    auth_config = read_json_config("../auth_config_files\\auth_config.json")
+    study_args = read_json_config("../src\\evolve_sdk\\study_args_load_flow.json")
     async with connect_async(
             host=auth_config["ewb_server"]["host"],
             rpc_port=auth_config["ewb_server"]["rpc_port"],
@@ -76,7 +76,7 @@ async def load_flow():
                     "Load flow study to calculate utilisation percent of transformers "
                     "and lines and voltage per unit on all buses.",
                     ["run_load_flow", feeder_mrid],
-                    json.load(open("../config_files\\style.json", "r")),
+                    json.load(open("../src\\utils\\style.json", "r")),
                     result.mappings
                 )
                 print(f"Uploaded study")
