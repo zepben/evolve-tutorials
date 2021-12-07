@@ -1,3 +1,9 @@
+#  Copyright 2020 Zeppelin Bend Pty Ltd
+#
+#  This Source Code Form is subject to the terms of the Mozilla Public
+#  License, v. 2.0. If a copy of the MPL was not distributed with this
+#  file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 import asyncio
 import json
 from typing import Tuple, Callable
@@ -11,7 +17,7 @@ from zepben.evolve import NetworkConsumerClient, NetworkService, Feeder, PhaseCo
     PerLengthSequenceImpedance, OverheadWireInfo, AcLineSegment, \
     EnergyConsumer
 
-from utils.study_creator import upload_load_flow_study
+from utils.load_flow_study_creator import upload_load_flow_study
 from utils.tracing import get_downstream_eq
 from utils.utils import get_logger, read_json_config
 
@@ -19,7 +25,7 @@ from utils.utils import get_logger, read_json_config
 async def load_flow():
     logger = get_logger()
     auth_config = read_json_config("../config_files\\config.json")
-    study_args = read_json_config("../config_files\\study_args.json")
+    study_args = read_json_config("../config_files\\study_args_load_flow.json")
     async with connect_async(
             host=auth_config["ewb_server"]["host"],
             rpc_port=auth_config["ewb_server"]["rpc_port"],
@@ -211,6 +217,3 @@ def _add_regulator_controllers(
 
     return net
 
-
-# if __name__ == '__main__':
-#     asyncio.run(run_load_flow())
