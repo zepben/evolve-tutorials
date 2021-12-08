@@ -22,7 +22,7 @@ from zepben.evolve import NetworkConsumerClient, NetworkService, Feeder, PhaseCo
 
 from utils.ev_hosting_capacity_study_creator import upload_ev_charging_study
 from utils.tracing import get_downstream_eq
-from utils.utils import get_logger, read_json_config
+from utils.utils import get_logger, read_json_config, parse_auth_config
 
 
 class DistTransformerInfo:
@@ -43,8 +43,8 @@ class DistTransformerInfo:
 
 async def hosting_capacity():
     logger = get_logger()
-    auth_config = read_json_config("../auth_config_files\\auth_config.json")
-    study_args = read_json_config("../src\\evolve_sdk\\study_args_hosting_capacity.json")
+    auth_config = parse_auth_config()
+    study_args = read_json_config("study_args_hosting_capacity.json")
     async with connect_async(
             host=auth_config["ewb_server"]["host"],
             rpc_port=auth_config["ewb_server"]["rpc_port"],
@@ -118,7 +118,7 @@ async def hosting_capacity():
                         f" Each EV charging station adds {ev_p_w / 1000}kW of real power"
                         f" and {ev_q_var / 1000}kVAR reactive power as load.",
                         ["ev_charging", feeder_mrid],
-                        json.load(open("../src\\utils\\style.json", "r")),
+                        json.load(open("../utils/style.json", "r")),
                         result.mappings,
                         added_ev_stations
                     )
@@ -333,3 +333,7 @@ def _add_regulator_controllers(
         )
 
     return net
+
+
+if __name__ == '__main__':
+    asyncio.run(hosting_capacity())

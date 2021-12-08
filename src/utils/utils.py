@@ -1,7 +1,8 @@
-import json
 import logging
 from logging import Logger
 from typing import Dict
+import argparse
+import json
 
 from zepben.evolve import NetworkConsumerClient
 
@@ -60,3 +61,12 @@ def read_json_config(config_file_path: str) -> Dict:
     config_dict = json.load(file)
     file.close()
     return config_dict
+
+
+def parse_auth_config():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("config")
+    args = parser.parse_args()
+    with open(args.config) as f:
+        cf = json.load(f)
+    return cf

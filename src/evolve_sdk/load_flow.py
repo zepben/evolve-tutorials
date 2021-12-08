@@ -19,13 +19,13 @@ from zepben.evolve import NetworkConsumerClient, NetworkService, Feeder, PhaseCo
 
 from utils.load_flow_study_creator import upload_load_flow_study
 from utils.tracing import get_downstream_eq
-from utils.utils import get_logger, read_json_config
+from utils.utils import get_logger, read_json_config, parse_auth_config
 
 
 async def load_flow():
     logger = get_logger()
-    auth_config = read_json_config("../auth_config_files\\auth_config.json")
-    study_args = read_json_config("../src\\evolve_sdk\\study_args_load_flow.json")
+    auth_config = parse_auth_config()
+    study_args = read_json_config("study_args_load_flow.json")
     async with connect_async(
             host=auth_config["ewb_server"]["host"],
             rpc_port=auth_config["ewb_server"]["rpc_port"],
@@ -76,7 +76,7 @@ async def load_flow():
                     "Load flow study to calculate utilisation percent of transformers "
                     "and lines and voltage per unit on all buses.",
                     ["run_load_flow", feeder_mrid],
-                    json.load(open("../src\\utils\\style.json", "r")),
+                    json.load(open("../utils/style.json", "r")),
                     result.mappings
                 )
                 print(f"Uploaded study")
@@ -217,3 +217,6 @@ def _add_regulator_controllers(
 
     return net
 
+
+if __name__ == '__main__':
+    asyncio.run(load_flow())
