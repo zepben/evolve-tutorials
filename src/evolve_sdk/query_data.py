@@ -7,7 +7,13 @@ from zepben.evolve import NetworkService, \
     PowerTransformer, EnergyConsumer, PhotoVoltaicUnit, BatteryUnit, Feeder
 
 from evolve_sdk.connect_to_server import connecting_ewb_server
-from utils.utils import read_json_config, parse_auth_config
+
+from utils.utils import parse_auth_config
+
+args = {
+    "equipment_mrid": "substation_site208850",
+    "feeder_mrid": "CPM3B3"
+}
 
 
 def query_data(args, evolve_client):
@@ -34,6 +40,5 @@ def query_data(args, evolve_client):
 
 if __name__ == '__main__':
     auth_config = parse_auth_config()
-    args = read_json_config("query_data_args.json")
     client = connecting_ewb_server(auth_config)
     query_data(args=args, evolve_client=client)

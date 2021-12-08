@@ -1,48 +1,62 @@
 # How to use the Python SDK
 
-The Evolve SDK provides the building blocks you need to interface with the rest of the platform. It can also be used to 
+The Evolve SDK provides the building blocks you need to interface with the rest of the platform. It can also be used to
 build your own solutions from scratch that will be compatible with other things built with the SDK.
 
 ## Getting Started
+
 The Python SDK can be used by using the zepben.evolve package that can be installed in an environment by using pip
-    
+
     pip install zepben.evolve
 
+To run this tutorial, we recommend to set up a new virtual environment and then install all the dependencies in your virtual environment with:
+
+    pip install .
+
 ### Configuration Setup
-These tutorials require a `auth_config.json` file. This configuration file must follow this structure:
 
-    {
-      "auth0": {
-        "client_id": "client_Id123",
-        "username": "username123",
-        "password": "password123",
-        "conf_address": "config_address.com"
-      },
-      "ewb_server": {
-        "host": "ewb_host",
-        "port": 1234,
-        "rpc_port": 1235,
-        "secure": "True"
-      },
-      "eas_server": {
-        "host": "eas_host",
-        "port": 1236
-      }
-    }
+To run the evolve_sdk tutorial code, you need to pass a unique parameter with the path to the authentication config
+file.
 
-The `auth_config.json` file is parsed and passed as a parameter called `config`. 
+The authentication config file must follow this structure:
 
-Zepben can provide a pre-filled config file with auth0 credentials, EWB and EAS server configuration. To access this, please make a request 
-in Zepben's public [#evolve-dev](https://app.slack.com/client/T6M26EDT2/C01E8RZTBUG) Slack channel.   
+```
+{
+  "auth0": {
+    "client_id": "your client_id",
+    "username": "your_username@xxxx.com.au",
+    "password": "Your password",
+    "conf_address": "https://host_url/ewb/auth"
+  },
+  "ewb_server": {
+    "host": "host_url",
+    "port": 443,
+    "rpc_port": 443,
+    "secure": "True"
+  },
+  "eas_server": {
+    "client_id": "instance_client_id",
+    "host": "host_url",
+    "port": 443
+  }
+}
 
-##Using the Python SDK
+```
+
+The .json auth config file path must be passed as a unique parameter. Zepben can provide a pre-filled config file with auth0 credentials, EWB and EAS server configuration. To access this,
+please make a request in Zepben's public [#evolve-dev](https://app.slack.com/client/T6M26EDT2/C01E8RZTBUG) Slack
+channel.
+
+## Using the Python SDK
+
 ### Creating Objects
-The Evolve platform is composed around a domain model based on the 'Common Information Model' (CIM). The CIM is a very 
-large standard that covers a huge amount of use cases. To make things more digestible, Evolve publishes its own [CIM 
-profile](https://zepben.github.io/evolve/docs/cim/evolve/). 
 
-The following snippet of code showcases how to create Power
-Transformers, Energy Consumers, Photovoltaic Units and Batteries:
+The Evolve platform is composed around a domain model based on the 'Common Information Model' (CIM). The CIM is a very
+large standard that covers a huge amount of use cases. To make things more digestible, Evolve publishes its
+own [CIM profile](https://zepben.github.io/evolve/docs/cim/evolve/).
+
+The following snippet of code showcases how to create Power Transformers, Energy Consumers, Photovoltaic Units and
+Batteries:
 
     from zepben.evolve import PowerTransformer, EnergyConsumer, PhotoVoltaicUnit, BatteryUnit
 
@@ -64,8 +78,10 @@ Transformers, Energy Consumers, Photovoltaic Units and Batteries:
     print(battery)
 
 ### Connecting to a Server
-It is also possible to interact, create or delete objects in a server. First, a connection with a set server must be established.
-The following snippet showcases one way of establishing a connection with the [EWB Server](https://zepben.github.io/evolve/docs/energy-workbench-server/2.8.0).
+
+It is also possible to interact, create or delete objects in a server. First, a connection with a set server must be
+established. The following snippet showcases one way of establishing a connection with
+the [EWB Server](https://zepben.github.io/evolve/docs/energy-workbench-server/2.8.0).
 
     from zepben.evolve import connect, SyncNetworkConsumerClient 
 
@@ -79,8 +95,9 @@ The following snippet showcases one way of establishing a connection with the [E
         print("Connection Established")
 
 ### Query Data From a Server
-Extracting and querying data from a specific Feeder can be accomplished by using the mrid of the desired feeder. The 
-next example displays the amount of Power Transformers, Energy Consumers, Photovoltaic Units and Batteries in the Feeder 
+
+Extracting and querying data from a specific Feeder can be accomplished by using the mrid of the desired feeder. The
+next example displays the amount of Power Transformers, Energy Consumers, Photovoltaic Units and Batteries in the Feeder
 CPM3B3:
 
     from zepben.evolve import connect, SyncNetworkConsumerClient, NetworkService, \
@@ -108,8 +125,9 @@ CPM3B3:
     print(f'Batteries in the feeder {feeder_mrid}: {len(batteries)}')
 
 ### Creating and Uploading Studies
-Creating and uploading studies to the server using a script is possible. The following example showcases the creation of 
-a very simple study. Once the study is created, it is automatically uploaded to the server and can be viewed in the 
+
+Creating and uploading studies to the server using a script is possible. The following example showcases the creation of
+a very simple study. Once the study is created, it is automatically uploaded to the server and can be viewed in the
 _Study List_ in the EAS Web Client.
 
     from geojson import Feature, Point, LineString, FeatureCollection

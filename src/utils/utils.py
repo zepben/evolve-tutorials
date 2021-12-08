@@ -6,7 +6,8 @@ import json
 
 from zepben.evolve import NetworkConsumerClient
 
-__all__ = ["get_logger", "read_json_config", "get_random_color", "get_feeder_network"]
+__all__ = ["get_logger", "read_json_config", "get_random_color", "get_feeder_network", "parse_auth_config"]
+
 
 
 async def get_feeder_network(channel, feeder_mrid):
