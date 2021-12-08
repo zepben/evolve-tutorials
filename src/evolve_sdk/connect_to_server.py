@@ -8,6 +8,7 @@ from zepben.evolve import *
 
 from utils.utils import parse_auth_config
 
+__all__ = ["connecting_ewb_server"]
 
 def connecting_ewb_server(config):
     print("Connecting to Server...")
