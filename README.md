@@ -16,6 +16,9 @@ This tutorial contains and demonstrate some features in the web client, like:
 This tutorial contains some snippets of code that demonstrate some functionalities of the SDK Python, like:
 - [Creating Objects](https://github.com/zepben/evolve-tutorials/blob/main/src/evolve_sdk/creating_objects.py)
 - [Retrieving Data](https://github.com/zepben/evolve-tutorials/blob/main/src/evolve_sdk/query_data.py)
+- [Running balanced load flow study](https://github.com/zepben/evolve-tutorials/blob/main/src/evolve_sdk/load_flow.py)
+- [Running a hosting capacity study](https://github.com/zepben/evolve-tutorials/blob/main/src/evolve_sdk/hosting_capacity.py)
+
 ### [Evolve App Server (EAS) Tutorials](https://github.com/zepben/evolve-tutorials/tree/main/src/eas)
 - [Uploading Studies](https://github.com/zepben/evolve-tutorials/blob/main/src/eas/upload_studies.py)
     - [Examples of .geojson payloads and mapbox styles](https://github.com/zepben/evolve-tutorials/tree/main/src/eas/line_length).   
