@@ -24,6 +24,5 @@ def connecting_ewb_server(config):
 
 
 if __name__ == '__main__':
-    # auth_config = read_json_config("../../auth_config_file/auth_config.json")
     auth_config = parse_auth_config()
     connecting_ewb_server(auth_config)
