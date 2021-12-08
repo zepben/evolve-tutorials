@@ -1,0 +1,19 @@
+{
+  "auth0": {
+    "client_id": "your client_id",
+    "username": "your_username@xxxx.com.au",
+    "password": "Your password",
+    "conf_address": "https://host_url/ewb/auth"
+  },
+  "ewb_server": {
+    "host": "host_url",
+    "port": 443,
+    "rpc_port": 443,
+    "secure": "True"
+  },
+  "eas_server": {
+    "client_id": "instance_client_id",
+    "host": "host_url",
+    "port": 443
+  }
+}

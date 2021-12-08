@@ -6,8 +6,10 @@
 
 from zepben.evolve import *
 
+from utils.utils import parse_auth_config
 
-def connecting_server(config):
+
+def connecting_ewb_server(config):
     print("Connecting to Server...")
 
     # Connecting server
@@ -19,3 +21,8 @@ def connecting_server(config):
         client = SyncNetworkConsumerClient(channel)
         print("Connection Established")
     return client
+
+
+if __name__ == '__main__':
+    auth_config = parse_auth_config()
+    connecting_ewb_server(auth_config)

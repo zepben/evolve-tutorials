@@ -1,0 +1,11 @@
+{
+  "feeder": "RGL3B6",
+  "load": {
+    "real_w": 2000,
+    "reactive_var": 0
+  },
+  "pv_load": {
+    "real_w": 1000,
+    "reactive_var": 0
+  }
+}

@@ -9,7 +9,7 @@ The Python SDK can be used by using the zepben.evolve package that can be instal
     pip install zepben.evolve
 
 ### Configuration Setup
-These tutorials require a `config.json` file. This configuration file must follow this structure:
+These tutorials require a `auth_config.json` file. This configuration file must follow this structure:
 
     {
       "auth0": {
@@ -27,13 +27,11 @@ These tutorials require a `config.json` file. This configuration file must follo
       "eas_server": {
         "host": "eas_host",
         "port": 1236
-      },
-      "test_config": {
-        "equipment_mrid": "equipment123",
-        "feeder_mrid": "feeder123"
       }
     }
-The `config.json` file is parsed and passed as a parameter called `config`. 
+
+The `auth_config.json` file is parsed and passed as a parameter called `config`. 
+
 Zepben can provide a pre-filled config file with auth0 credentials, EWB and EAS server configuration. To access this, please make a request 
 in Zepben's public [#evolve-dev](https://app.slack.com/client/T6M26EDT2/C01E8RZTBUG) Slack channel.   
 
