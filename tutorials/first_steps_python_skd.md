@@ -3,7 +3,7 @@
 The Evolve SDK provides the building blocks you need to interface with the rest of the platform. It can also be used to
 build your own solutions from scratch that will be compatible with other things built with the SDK.
 
-##First Steps
+## First Steps
 
 To be able to use the Python SDK, be sure to have the following:
 
@@ -24,7 +24,7 @@ SDK was developed using this programming language, we recommend using PyCharm to
 PyCharm has the Community and the Professional version; the SDK will work on either version. You can download Pycharm 
 [here](https://www.jetbrains.com/pycharm/download/#section=windows). 
 
-####PyCharm has the following System Requirements:
+**PyCharm has the following System Requirements:**
 
 - 64-bit version of Microsoft Windows 10, 8.
 - 2 GB RAM minimum, 8 GB RAM recommended.
@@ -33,7 +33,7 @@ PyCharm has the Community and the Professional version; the SDK will work on eit
 - Python 2.7, or Python 3.5 or newer.
 
 
-####PyCharm has the following are the Installation Instructions:
+**PyCharm has the following are the Installation Instructions:**
 
 1. Run the pycharm-2021.3.2.exe file that starts the installation Wizard.
 2. Follow all steps suggested by the wizard.
@@ -41,8 +41,7 @@ PyCharm has the Community and the Professional version; the SDK will work on eit
 
 -----------
 ## 2. Configure your Virtual Environment
-
-###Create a virtual environment
+### Create a virtual environment
 
 1. After ensuring you have downloaded and installed [Python](https://www.python.org/downloads/) on your computer, 
 do one of the following:
@@ -78,7 +77,7 @@ If **Existing Environment** is selected:
 For further information, take a look at JetBrains Documentation
 on how to create a virtual environment [here](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#existing-environment).
 
-###Install the Zepben libraries
+### Install the Zepben libraries
 
 Use your terminal, making sure it is pointing at the virtual environment, to input the following command:
 
