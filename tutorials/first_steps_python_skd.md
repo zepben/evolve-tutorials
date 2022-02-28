@@ -1,49 +1,49 @@
-# How to use the Python SDK
+# How to use the Evolve Python SDK
 
-The Evolve SDK provides the building blocks you need to interface with the rest of the platform. It can also be used to
-build your own solutions from scratch that will be compatible with other things built with the SDK.
+The Evolve Python SDK provides the building blocks you need to interface with the rest of the Evolve platform. It can also be used to
+build your own solutions from scratch that will be compatible with other things developed with the SDK.
 
 ## First Steps
 
-To be able to use the Python SDK, be sure to have the following:
+To be able to use the Python SDK, you'll need to do the following:
 
-1. Pycharm Installed in your machine.
-2. Set up a virtual environment and add the Zepben Packages.
-3. Start using the Zepben Evolve Python SDK
+1. Install PyCharm on your machine
+2. Set up a virtual environment and add the Zepben packages
+3. Start using the Evolve Python SDK
 
-You can find a set-up guide below to meet the requirements.
+The set-up guide below outlines how to meet these requirements.
 __________
 
-### 1. Download and set up Pycharm
+### 1. Download and set up PyCharm
 
-PyCharm is one of the easiest integrated development environment (IDE) used for Python. As the 
-SDK was developed using this programming language, we recommend using PyCharm to use the SDK.
+PyCharm is one of the easiest integrated development environments (IDE) to use for Python development. As the 
+SDK was developed using this IDE, we also recommend it to make use of the SDK.
 
 ![Pycharm Landing Page Snippet](images/pycharm_snippet.png)
 
-PyCharm has the Community and the Professional version; the SDK will work on either version. You can download Pycharm 
+PyCharm has both a Community (free) and a Professional (paid) version; the SDK will work with either. You can download PyCharm 
 [here](https://www.jetbrains.com/pycharm/download/#section=windows). 
 
-**PyCharm has the following System Requirements:**
+**PyCharm System Requirements:**
 
-- 64-bit version of Microsoft Windows 10, 8.
-- 2 GB RAM minimum, 8 GB RAM recommended.
-- 2.5 GB hard disk space, SSD recommended.
-- 1024x768 minimum screen resolution.
-- Python 2.7, or Python 3.5 or newer.
+- 64-bit version of Microsoft Windows 8, 10
+- 2 GB RAM minimum, 8 GB RAM recommended
+- 2.5 GB hard disk space, SSD recommended
+- 1024x768 minimum screen resolution
+- Python 2.7, or Python 3.5 or newer
 
 
-**PyCharm has the following are the Installation Instructions:**
+**PyCharm Installation Instructions:**
 
-1. Run the pycharm-2021.3.2.exe file that starts the installation Wizard.
-2. Follow all steps suggested by the wizard.
-3. Launch PyCharm after installed.
+1. Run the pycharm-2021.3.2.exe file to start the installation wizard
+2. Follow all steps suggested by the wizard
+3. Launch PyCharm once installed
 
 -----------
 ## 2. Configure your Virtual Environment
 ### Create a virtual environment
 
-1. After ensuring you have downloaded and installed [Python](https://www.python.org/downloads/) on your computer, 
+1. After downloading and installing [Python](https://www.python.org/downloads/) on your computer, 
 do one of the following:
 
 - Click the Python Interpreter selector and choose **Add Interpreter**.
@@ -51,30 +51,30 @@ do one of the following:
 
 ![Python Interpreter dialog snippet](images/py_interpreter_dialog_add.png)
 
-2. In the left-hand pane of the Add **Python Interpreter** dialog, select **Virtualenv Environment**. The following actions depend on whether the virtual environment existed before.
+2. In the left-hand pane of the Add **Python Interpreter** dialog, select **Virtualenv Environment**. The following actions depend on whether the virtual environment already exists.
 
 ![Create Virtual Environment Snippet](images/py_create_virtual_environment.png)
 
 If **New Environment** is selected:
 
-1. Specify the location of the new virtual environment in the text field, or click `...` and find location in your file system. Note that the directory where the new virtual environment should be located, must be empty!
-2. Choose the base interpreter from the list, or click `...` Choose the base interpreter and find a Python executable in the your file system.
+1. Specify the location of the new virtual environment in the text field, or click `...` and find the location in your file system. Note that the directory where the new virtual environment will be located must be empty!
+2. Choose the base interpreter from the list, or click `...`. Choose the base interpreter and find a Python executable in your file system.
 
 If PyCharm detects no Python on your machine, it provides two options: to download the latest Python versions from python.org or to specify a path to the Python executable (in case of non-standard installation).
 
 ![Create Virtual Environment Download Python Snippet](images/py_create_virtual_environment_download_python.png)
 
-3. Select the **Inherit global site-packages** checkbox if you want that all packages installed in the global Python on your machine to be added to the virtual environment you're going to create. This checkbox corresponds to the `--system-site-packages` option of the [virtualenv](http://www.virtualenv.org/en/latest/index.html) tool.
+3. Select the **Inherit global site-packages** checkbox if you want all packages installed in the global Python on your machine to be added to the virtual environment you're going to create. This checkbox corresponds to the `--system-site-packages` option of the [virtualenv](http://www.virtualenv.org/en/latest/index.html) tool.
 4. Select the **Make available to all projects** checkbox if you want to reuse this environment when creating Python interpreters in PyCharm.
 5. Click **OK** to complete the task.
 
 If **Existing Environment** is selected:
 
-1. Expand the **Interpreter** list and select any of the existing interpreters. Alternatively, click `...` and specify a path to the Python executable in your file system, for example, **C:\Python36\python.exe**.
+1. Expand the **Interpreter** list and select any of the existing interpreters. Alternatively, click `...` and specify a path to the Python executable in your file system, e.g. **C:\Python36\python.exe**.
 2. Select the **Make available to all projects** checkbox if you want to reuse this environment when creating Python interpreters in PyCharm.
 3. Click **OK** to complete the task.
 
-For further information, take a look at JetBrains Documentation
+For further information, take a look at the JetBrains PyCharm Documentation
 on how to create a virtual environment [here](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#existing-environment).
 
 ### Install the Zepben libraries
@@ -83,11 +83,11 @@ Use your terminal, making sure it is pointing at the virtual environment, to inp
 
     pip install zepben.evolve
 
-To check if the required Zepben Libraries where installed correctly, you can use the following command:
+To check if the required Zepben libraries were installed correctly, you can use the following command:
 
     pip list
 
-Your terminal will show all the libraries installed in the virtual environment, including the Zepben libraries, similarly to the following snippet:
+Your terminal will show all the libraries installed in the virtual environment, including the Zepben libraries, and should look similar to this:
 
 ![Terminal Snippet that shows Zepben Libraries](images/snippet_terminal.png)
 
@@ -165,7 +165,7 @@ Batteries:
 
 It is also possible to interact, create or delete objects in a server. First, a connection with a set server must be
 established. The following snippet showcases one way of establishing a connection with
-the [EWB Server](https://zepben.github.io/evolve/docs/energy-workbench-server/2.8.0).
+the [EWB Server](https://zepben.github.io/evolve/docs/energy-workbench-server/).
 
     from zepben.evolve import connect, SyncNetworkConsumerClient 
 
@@ -180,7 +180,7 @@ the [EWB Server](https://zepben.github.io/evolve/docs/energy-workbench-server/2.
 
 ### Query Data From a Server
 
-Extracting and querying data from a specific Feeder can be accomplished by using the mrid of the desired feeder. The
+Extracting and querying data from a specific Feeder can be accomplished by using the mRID of the desired feeder. The
 next example displays the amount of Power Transformers, Energy Consumers, Photovoltaic Units and Batteries in the Feeder
 CPM3B3:
 
