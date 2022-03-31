@@ -4,15 +4,14 @@
 #  License, v. 2.0. If a copy of the MPL was not distributed with this
 #  file, You can obtain one at https://mozilla.org/MPL/2.0/.
 from zepben.evolve import NetworkService, \
-    PowerTransformer, EnergyConsumer, PhotoVoltaicUnit, BatteryUnit, Feeder
+    PowerTransformer, EnergyConsumer, PhotoVoltaicUnit, BatteryUnit, Feeder, AcLineSegment
 
-from evolve_sdk.connect_to_server import connecting_ewb_server
-
+from utils.connect_to_server import connecting_ewb_server
 from utils.utils import parse_auth_config
 
 args = {
     "equipment_mrid": "substation_site208850",
-    "feeder_mrid": "CPM3B3"
+    "feeder_mrid": "fd_141933"
 }
 
 
@@ -33,6 +32,10 @@ def query_data(args, evolve_client):
         print(f'Energy Consumers in the feeder {feeder_mrid}: {len(energy_consumers)}')
         print(f'Photovoltaic Units in the feeder {feeder_mrid}: {len(pv_units)}')
         print(f'Batteries in the feeder {feeder_mrid}: {len(batteries)}')
+        lines: [AcLineSegment] = list(container.objects(AcLineSegment))
+        for line in lines:
+            wi = line.wire_info
+            print(wi)
     else:
         print(f'Feeder mRID: {feeder_mrid} was not found')
         print(f'Available Feeder mRIDs: {list(feeder_mrids)}')
